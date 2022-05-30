@@ -69,6 +69,7 @@ export default class ReactFloater extends React.Component {
     debug: PropTypes.bool,
     disableAnimation: PropTypes.bool,
     disableFlip: PropTypes.bool,
+    disableGpuAcceleration: PropTypes.bool,
     disableHoverToClick: PropTypes.bool,
     event: PropTypes.oneOf(['hover', 'click']),
     eventDelay: PropTypes.number,
@@ -127,6 +128,7 @@ export default class ReactFloater extends React.Component {
     debug: false,
     disableAnimation: false,
     disableFlip: false,
+    disableGpuAcceleration: false,
     disableHoverToClick: false,
     event: 'click',
     eventDelay: 0.4,
@@ -227,7 +229,15 @@ export default class ReactFloater extends React.Component {
 
   initPopper(target = this.target) {
     const { positionWrapper } = this.state;
-    const { disableFlip, getPopper, hideArrow, offset, placement, wrapperOptions } = this.props;
+    const {
+      disableFlip,
+      disableGpuAcceleration,
+      getPopper,
+      hideArrow,
+      offset,
+      placement,
+      wrapperOptions,
+    } = this.props;
     const flipBehavior =
       placement === 'top' || placement === 'bottom'
         ? 'flip'
@@ -242,6 +252,9 @@ export default class ReactFloater extends React.Component {
       new Popper(target, this.floaterRef, {
         placement,
         modifiers: {
+          computeStyle: {
+            gpuAcceleration: !disableGpuAcceleration,
+          },
           arrow: {
             enabled: !hideArrow,
             element: this.arrowRef,
@@ -293,6 +306,9 @@ export default class ReactFloater extends React.Component {
       new Popper(this.target, this.wrapperRef, {
         placement: wrapperOptions.placement || placement,
         modifiers: {
+          computeStyle: {
+            gpuAcceleration: !disableGpuAcceleration,
+          },
           arrow: {
             enabled: false,
           },

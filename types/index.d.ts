@@ -72,6 +72,10 @@ export interface Props {
    */
   disableFlip?: boolean;
   /**
+   * Use absolute positioning instead of translate3d when positioning popup
+   */
+  disableGpuAcceleration?: boolean;
+  /**
    * Don't convert hover event to click on mobile.
    */
   disableHoverToClick?: boolean;
