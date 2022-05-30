@@ -96,6 +96,11 @@ Animate the Floater on scroll/resize.
 **disableFlip** {bool} ▶︎ `false`  
 Disable changes in the Floater position on scroll/resize.
 
+**disableGpuAcceleration** {bool} ▶︎ `false`
+Disable GPU acceleration when initializing popper.
+Setting this to `true` will use absolute positioning instead of translate3d when positioning popup.
+Set this to `true` if text appears blurry at certain zoom levels, but be aware that flip animation will be lost.
+
 **disableHoverToClick** {bool} ▶︎ `false`  
 Don't convert *hover* event to *click* on mobile.
 
