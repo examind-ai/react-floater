@@ -1,3 +1,8 @@
+Changes from gilbarbara/react-floater
+===
+
+Forked from https://github.com/gilbarbara/react-floater to add `disableGpuAcceleration` prop to get `popper.js` to use absolute positioning intead of translate3d so text does not appear blurry at certain browser zoom levels.
+
 React Floater
 ===
 
@@ -14,7 +19,7 @@ You can view and edit the code for each Floater [here](https://codesandbox.io/s/
 Install.
 
 ```bash
-npm install --save react-floater
+npm install --save @examind/react-floater
 ```
 
 Import it into your component:
