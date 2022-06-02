@@ -1,16 +1,16 @@
 {
   "name": "@examind/react-floater",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "description": "Floaters everywhere!",
   "author": "Gil Barbara <gilbarbara@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gilbarbara/react-floater.git"
+    "url": "git+https://github.com/examind-ai/react-floater"
   },
   "bugs": {
-    "url": "https://github.com/gilbarbara/react-floater/issues"
+    "url": "https://github.com/examind-ai/react-floater"
   },
-  "homepage": "https://github.com/gilbarbara/react-floater#readme",
+  "homepage": "https://github.com/examind-ai/react-floater",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
